@@ -1,0 +1,41 @@
+<form
+  [formGroup]="form"
+  class="form form-feedback"
+  [ngClass]="{ 'form--submitted': submitted }"
+>
+  <app-rating formControlName="rating"></app-rating>
+  <div class="form-feedback__comment" *ngIf="form?.value?.rating && !saved">
+    <label for="comment">Geef je graag wat meer uitleg?</label>
+    <textarea
+      rows="5"
+      formControlName="comment"
+      id="comment"
+      #comment
+      appAutoFocus
+    ></textarea>
+    <div
+      class="form-field__error"
+      *ngIf="!form.controls.comment.valid && submitted"
+    >
+      Mag niet leeg zijn.
+    </div>
+    <div class="form-field__error" *ngIf="error">
+      Er is een fout opgetreden bij het verzenden!
+    </div>
+    <div class="form__disclaimer">
+      <div>
+        <i>Wij verwerken uw gegevens conform onze privacy policy</i>
+      </div>
+      <button (click)="onFormSubmit()" class="button button--primary">
+        <img
+          *ngIf="loading"
+          class="form__spinner"
+          src="assets/images/spinner.svg"
+          alt="Laden..."
+        />
+        Verzenden
+      </button>
+    </div>
+  </div>
+  <div *ngIf="saved" class="form__success">Feedback met success verzonden!</div>
+</form>

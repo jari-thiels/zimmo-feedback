@@ -1,0 +1,72 @@
+.blog-list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+  padding-bottom: 70px;
+
+  > * {
+    width: 25%;
+  }
+
+  &-item {
+    &__card {
+      background-color: white;
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+      margin: 16px;
+      border-radius: 4px;
+      overflow: hidden;
+      text-align: left;
+
+      h2 {
+        font-size: 14px;
+        color: rgb(20, 20, 20);
+      }
+
+      p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-weight: lighter;
+        color: rgb(173, 174, 185);
+      }
+
+      a {
+        font-size: 14px;
+        text-decoration: none;
+        color: rgb(59, 170, 255);
+
+        &:hover,
+        &:focus {
+          outline: none;
+          color: rgb(247, 175, 5);
+        }
+      }
+    }
+
+    &__image {
+      height: 200px;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    &__content {
+      padding: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .blog-list > * {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .blog-list > * {
+    width: 100%;
+  }
+}

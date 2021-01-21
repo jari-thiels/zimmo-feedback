@@ -1,0 +1,17 @@
+<div class="rating" [ngClass]="{ 'rating--disabled': disabled }">
+  <p class="rating__title">Hoe eenvoudig kon je je huis online plaatsen?</p>
+  <div class="rating__selection">
+    <button
+      *ngFor="let button of [].constructor(5); let i = index"
+      [ngClass]="{ 'rating__button--selected': value === i + 1 }"
+      [disabled]="disabled || value === i + 1"
+      (click)="onRatingSelect(i + 1)"
+      class="rating__button rating__button--{{ i + 1 }}"
+    >
+      <img
+        src="assets/images/smiley-{{ i + 1 }}.svg"
+        alt="Feedback smiley die een score van {{ i + 1 }} op 5 voorsteld"
+      />
+    </button>
+  </div>
+</div>

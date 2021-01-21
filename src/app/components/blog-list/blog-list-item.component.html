@@ -1,0 +1,11 @@
+<div class="blog-list-item__card">
+  <div
+    class="blog-list-item__image"
+    [ngStyle]="{ 'background-image': 'url(' + item?.imageUrl + ')' }"
+  ></div>
+  <div class="blog-list-item__content">
+    <h2>{{ item?.title }}</h2>
+    <p>{{ item?.description }}</p>
+    <a [href]="item?.articleUrl">Lees meer ...</a>
+  </div>
+</div>

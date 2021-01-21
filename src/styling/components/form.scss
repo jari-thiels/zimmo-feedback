@@ -1,0 +1,55 @@
+.form {
+  label {
+    font-weight: bold;
+  }
+
+  &--submitted {
+    textarea.ng-invalid {
+      border-color: red !important;
+    }
+  }
+
+  &-field__error {
+    color: red;
+    text-align: left;
+    font-size: 10px;
+  }
+
+  &__disclaimer {
+    font-size: 10px;
+    color: lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+  &__success {
+    background-color: rgb(213, 245, 219);
+    color: rgb(60, 208, 44);
+    padding: 16px;
+    text-align: left;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+
+  &__error {
+    background-color: rgb(245, 213, 213);
+    color: rgb(208, 44, 44);
+    padding: 16px;
+    text-align: left;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+
+  &__spinner {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+  }
+}
