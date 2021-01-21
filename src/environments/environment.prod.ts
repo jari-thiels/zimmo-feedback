@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl: 'http://test.be',
+  sendFeedbackUrl: 'feedback/send',
 };
