@@ -1,10 +1,13 @@
 <form
   [formGroup]="form"
   class="form form-feedback"
-  [ngClass]="{ 'form--submitted': submitted }"
+  [ngClass]="{ 'form--submitted': isInFormState('Submitted') }"
 >
   <app-rating formControlName="rating"></app-rating>
-  <div class="form-feedback__comment" *ngIf="form?.value?.rating && !saved">
+  <div
+    class="form-feedback__comment"
+    *ngIf="form?.value?.rating && !isInFormState('Saved')"
+  >
     <label for="comment">Geef je graag wat meer uitleg?</label>
     <textarea
       rows="5"
@@ -15,11 +18,11 @@
     ></textarea>
     <div
       class="form-field__error"
-      *ngIf="!form.controls.comment.valid && submitted"
+      *ngIf="!form.controls.comment.valid && isInFormState('Submitted')"
     >
       Mag niet leeg zijn.
     </div>
-    <div class="form-field__error" *ngIf="error">
+    <div class="form-field__error" *ngIf="isInFormState('Error')">
       Er is een fout opgetreden bij het verzenden!
     </div>
     <div class="form__disclaimer">
@@ -28,7 +31,7 @@
       </div>
       <button (click)="onFormSubmit()" class="button button--primary">
         <img
-          *ngIf="loading"
+          *ngIf="isInFormState('Loading')"
           class="form__spinner"
           src="assets/images/spinner.svg"
           alt="Laden..."
@@ -37,5 +40,7 @@
       </button>
     </div>
   </div>
-  <div *ngIf="saved" class="form__success">Feedback met success verzonden!</div>
+  <div *ngIf="isInFormState('Saved')" class="form__success">
+    Feedback met success verzonden!
+  </div>
 </form>
