@@ -1,9 +1,9 @@
-import { Component, forwardRef, Input } from "@angular/core";
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
+import { Component, forwardRef, Input } from '@angular/core';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 @Component({
-  selector: "app-rating",
-  templateUrl: "./rating.component.html",
+  selector: 'app-rating',
+  templateUrl: './rating.component.html',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -13,6 +13,7 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
   ],
 })
 export class RatingComponent implements ControlValueAccessor {
+  // Disabled state can be set by property AND by FormControl.disable()
   @Input() disabled = false;
 
   // Rating number assigned from 1(🙁) to 5(😀)

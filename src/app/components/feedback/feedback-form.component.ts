@@ -32,7 +32,7 @@ export class FeedbackFormComponent implements OnInit, OnDestroy {
   subscription: Subscription;
 
   // Get the comment textarea to give focus when a rating is selected
-  @ViewChild('comment', { static: false }) textarea: ElementRef;
+  @ViewChild('comment') textarea: ElementRef;
 
   constructor(private feedbackService: FeedbackService) {}
 
