@@ -13,7 +13,7 @@ const fakeHttpClient = {
     console.info('Request send with:', data);
     return timer(1000).pipe(
       map(() => {
-        throw new Error();
+        // throw new Error();
         return;
       })
     );
