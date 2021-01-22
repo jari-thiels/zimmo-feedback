@@ -6,7 +6,10 @@
   <app-rating formControlName="rating"></app-rating>
   <div
     class="form-feedback__comment"
-    *ngIf="form?.value?.rating && !isInFormState('Saved')"
+    *ngIf="
+      isInFormState('Loading') ||
+      (form?.value?.rating && !isInFormState('Saved'))
+    "
   >
     <label for="comment">Geef je graag wat meer uitleg?</label>
     <textarea

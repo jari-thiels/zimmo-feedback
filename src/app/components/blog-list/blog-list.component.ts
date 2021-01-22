@@ -12,28 +12,28 @@ export class BlogListComponent {
       title: '6 makkelijke manieren om voor een huis te sparen',
       description:
         'Een huis kopen een onbereikbare toekomstdroom? Dat hoeft helemaal niet!',
-      articleUrl: 'http://localhost:4200',
+      articleUrl: 'https://www.zimmo.be/nl/',
     },
     {
       imageUrl: 'https://picsum.photos/350',
       title: '6 makkelijke manieren om voor een huis te sparen',
       description:
         'Een huis kopen een onbereikbare toekomstdroom? Dat hoeft helemaal niet!',
-      articleUrl: 'http://localhost:4200',
+      articleUrl: 'https://www.zimmo.be/nl/',
     },
     {
       imageUrl: 'https://picsum.photos/400',
       title: '6 makkelijke manieren om voor een huis te sparen',
       description:
         'Een huis kopen een onbereikbare toekomstdroom? Dat hoeft helemaal niet!',
-      articleUrl: 'http://localhost:4200',
+      articleUrl: 'https://www.zimmo.be/nl/',
     },
     {
       imageUrl: 'https://picsum.photos/450',
       title: '6 makkelijke manieren om voor een huis te sparen',
       description:
         'Een huis kopen een onbereikbare toekomstdroom? Dat hoeft helemaal niet!',
-      articleUrl: 'http://localhost:4200',
+      articleUrl: 'https://www.zimmo.be/nl/',
     },
   ];
 }

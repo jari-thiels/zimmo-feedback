@@ -62,15 +62,19 @@ export class FeedbackFormComponent implements OnInit, OnDestroy {
       return;
     }
 
+    const feedbackData = this.form.value;
+
     // Start loading
     this.state = FormState.Loading;
-    this.feedbackService.sendFeedback(this.form.value).subscribe(
+    this.form.controls.rating.disable();
+    this.feedbackService.sendFeedback(feedbackData).subscribe(
       () => {
         // Disable the rating control whem the feedback is send succesfully
-        this.form.controls.rating.disable();
         this.state = FormState.Saved;
       },
       () => {
+        // When an error occurs the user should be able to update his data
+        this.form.controls.rating.enable();
         this.state = FormState.Error;
       }
     );
